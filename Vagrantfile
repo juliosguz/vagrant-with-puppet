@@ -18,6 +18,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.manifest_file = "basenode.pp"
   end
 
+  config.vm.provider "virtualbox" do |v|
+    v.customize ["modifyvm", :id, "--cpuexecutioncap", "90"]
+    v.customize ["modifyvm", :id, "--memory", "2048"]
+    v.customize ["modifyvm", :id, "--cpus", 2]
+  end
+
 
   # with 127.0.0.1:4567
   #config.vm.network :forwarded_port, host: 4567, guest: 80
@@ -25,6 +31,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # with custom IP
   config.vm.network "private_network", ip: "192.168.50.4"
 
-  config.vm.synced_folder "D:\\server\\www\\php_mysql_ubuntu12", "/var/www/"
+  #config.vm.synced_folder "D:\\server\\www\\php_mysql_ubuntu12", "/var/www/"
+  config.vm.synced_folder "D:\\server\\data\\ubuntu12\\www", "/var/www/"
+
+  config.ssh.forward_agent = true
+  #config.ssh.username = "vagrant_user"
+  #config.ssh.private_key_path = "C:\\Users\\JulioCesar\\.ssh\\id_rsa"
 
 end

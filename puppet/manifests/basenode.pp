@@ -1,5 +1,5 @@
 # Enable later
-#exec {"apt-get update":path => "/usr/bin",}
+exec {"apt-get update":path => "/usr/bin",}
 
 include stdlib
 include puppi
@@ -8,14 +8,17 @@ include php
 
 apache::module { 'rewrite': }
 
-apache::vhost { 'luchoxp.com':
-	docroot =>'/var/www/luchoxp',
-	server_name => 'luchoxp.com',
+apache::vhost { 'www.clickizquierdo.com':
+	docroot =>'/var/www/clickizquierdo',
+	server_name => 'www.clickizquierdo.com',
 	env_variables => ['Environment local']
 }
 
-apache::vhost { 'clickizquierdo.com':
-	docroot =>'/var/www/clickizquierdo',
-	server_name => 'clickizquierdo.com',
-	env_variables => ['Environment local']
+#PHP config
+php::module { "mysql": }
+php::module { "sqlite": }
+
+#MYSQL config
+class { "mysql":
+  root_password => 'root',
 }
