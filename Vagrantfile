@@ -35,7 +35,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder "D:\\server\\data\\ubuntu12\\www", "/var/www/"
 
   config.ssh.forward_agent = true
-  #config.ssh.username = "vagrant_user"
-  #config.ssh.private_key_path = "C:\\Users\\JulioCesar\\.ssh\\id_rsa"
+  #config.ssh.username = "juliosguz"
+  #config.ssh.private_key_path = "D:\\server\\keys\\juliosguz.ppk"
+
 
 end
