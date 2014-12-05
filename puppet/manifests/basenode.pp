@@ -8,11 +8,11 @@ include php
 
 apache::module { 'rewrite': }
 
-apache::vhost { 'www.clickizquierdo.com':
-	docroot =>'/var/www/clickizquierdo',
-	server_name => 'www.clickizquierdo.com',
-	env_variables => ['Environment local']
-}
+#apache::vhost { 'www.clickizquierdo.com':
+#	docroot =>'/var/www/clickizquierdo',
+#	server_name => 'www.clickizquierdo.com',
+#	env_variables => ['Environment local']
+#}
 
 #PHP config
 php::module { "mysql": }

@@ -31,12 +31,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # with custom IP
   config.vm.network "private_network", ip: "192.168.50.4"
 
-  #config.vm.synced_folder "D:\\server\\www\\php_mysql_ubuntu12", "/var/www/"
-  config.vm.synced_folder "D:\\server\\data\\ubuntu12\\www", "/var/www/"
+  # Example : config.vm.synced_folder "D:\\server\\www\\php_mysql_ubuntu12", "/var/www/"
+  # You need to edit this part like your structure
+  config.vm.synced_folder "F:\\server\\data\\ubuntu12\\www", "/var/www/"
 
   config.ssh.forward_agent = true
   #config.ssh.username = "juliosguz"
   #config.ssh.private_key_path = "D:\\server\\keys\\juliosguz.ppk"
-
-
 end
