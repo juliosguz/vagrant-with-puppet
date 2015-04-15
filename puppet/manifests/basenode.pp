@@ -1,5 +1,5 @@
 # Enable later
-exec {"apt-get update":path => "/usr/bin",}
+#exec {"apt-get update":path => "/usr/bin",}
 
 include stdlib
 include puppi
@@ -8,9 +8,9 @@ include php
 
 apache::module { 'rewrite': }
 
-apache::vhost { 'www.clickizquierdo.com':
-	docroot =>'/var/www/clickizquierdo',
-	server_name => 'www.clickizquierdo.com',
+apache::vhost { 'www.juliosguz.com':
+	docroot =>'/var/www/juliosguz',
+	server_name => 'www.juliosguz.com',
 	env_variables => ['Environment local']
 }
 

@@ -8,7 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "hashicorp/precise64"
+  config.vm.box = "ubuntu12"
 
   # Added by Julio
   #config.vm.provision :shell, path: "bootstrap.sh"
@@ -32,11 +32,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "private_network", ip: "192.168.50.4"
 
   #config.vm.synced_folder "D:\\server\\www\\php_mysql_ubuntu12", "/var/www/"
-  config.vm.synced_folder "D:\\server\\data\\ubuntu12\\www", "/var/www/"
+  config.vm.synced_folder "E:\\server\\data\\ubuntu12\\www", "/var/www/"
 
   config.ssh.forward_agent = true
-  #config.ssh.username = "juliosguz"
-  #config.ssh.private_key_path = "D:\\server\\keys\\juliosguz.ppk"
-
-
+  
 end
