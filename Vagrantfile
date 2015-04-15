@@ -8,7 +8,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "ubuntu12"
+  #config.vm.box = "ubuntu12"
+  config.vm.box = "hashicorp/precise64"
 
   # Added by Julio
   #config.vm.provision :shell, path: "bootstrap.sh"
@@ -31,6 +32,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # with custom IP
   config.vm.network "private_network", ip: "192.168.50.4"
 
+  # Example : config.vm.synced_folder "D:\\server\\www\\php_mysql_ubuntu12", "/var/www/"
+  # You need to edit this part like your structure
   #config.vm.synced_folder "D:\\server\\www\\php_mysql_ubuntu12", "/var/www/"
   config.vm.synced_folder "E:\\server\\data\\ubuntu12\\www", "/var/www/"
 
